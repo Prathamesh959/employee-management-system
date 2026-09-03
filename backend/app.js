@@ -8,7 +8,13 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 const app = express();
 
 // ---------- Built-in Middleware ----------
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://employee-management-system-nu-roan.vercel.app',
+    'http://localhost:5173'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

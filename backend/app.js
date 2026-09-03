@@ -10,6 +10,7 @@ const app = express();
 // ---------- Built-in Middleware ----------
 app.use(cors({
   origin: [
+    'https://employee-management-system-8kr936e3c.vercel.app',
     'https://employee-management-system-nu-roan.vercel.app',
     'http://localhost:5173'
   ],

@@ -259,11 +259,11 @@ const EmployeeForm = ({
             <div className="form-group">
               <label>Salary</label>
               <div className="input-with-icon">
-                <span className="input-icon">$</span>
+                <span className="input-icon">₹</span>
                 <input 
                   type="number" 
                   name="salary" 
-                  placeholder="0.00"
+                  placeholder="0"
                   value={formData.salary} 
                   onChange={handleChange} 
                   className={errors.salary ? "input-error" : ""}

@@ -36,9 +36,6 @@ const EmployeeTable = ({ employees, onDeleteClick }) => {
       <table className="employee-table">
         <thead>
           <tr>
-            <th className="checkbox-col">
-              <input type="checkbox" className="custom-checkbox" />
-            </th>
             <th>Employee</th>
             <th>Employee ID</th>
             <th>Department</th>
@@ -50,9 +47,6 @@ const EmployeeTable = ({ employees, onDeleteClick }) => {
         <tbody>
           {employees.map((employee) => (
             <tr key={employee.id}>
-              <td className="checkbox-col">
-                <input type="checkbox" className="custom-checkbox" />
-              </td>
               <td>
                 <div className="employee-profile-cell">
                   <div className="employee-avatar">

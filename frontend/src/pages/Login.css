@@ -103,7 +103,8 @@
 
 .input-wrapper input {
   width: 100%;
-  padding: 0.7rem 0.75rem 0.7rem 2.75rem;
+  padding: 0.7rem 0.75rem !important;
+  padding-left: 2.75rem !important;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -111,6 +112,17 @@
   background: #ffffff;
   transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
+}
+
+/* Ensure right padding for password toggle */
+#password {
+  padding-right: 2.75rem !important;
+}
+
+/* Hide native Edge/IE password reveal icon */
+.input-wrapper input::-ms-reveal,
+.input-wrapper input::-ms-clear {
+  display: none;
 }
 
 .input-wrapper input:focus {

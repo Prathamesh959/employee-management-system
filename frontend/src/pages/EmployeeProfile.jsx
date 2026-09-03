@@ -163,7 +163,7 @@ const EmployeeProfile = () => {
             <div className="info-item">
               <span className="info-label">Annual Salary</span>
               <span className="info-value">
-                {employee.salary ? `$${Number(employee.salary).toLocaleString()}` : "Confidential"}
+                {employee.salary ? `₹${Number(employee.salary).toLocaleString('en-IN')}` : "Confidential"}
               </span>
             </div>
           </div>

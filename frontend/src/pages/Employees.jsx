@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import api from "../services/api";
 import EmployeeFilters from "../components/employees/EmployeeFilters";
 import EmployeeTable from "../components/employees/EmployeeTable";
@@ -9,6 +9,7 @@ import "./Employees.css";
 
 const Employees = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [employees, setEmployees] = useState([]);
   const [departments, setDepartments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,10 @@ const Employees = () => {
 
   // Filter & Pagination State
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedDepartment, setSelectedDepartment] = useState("");
+  const [selectedDepartment, setSelectedDepartment] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get("departmentName") || "";
+  });
   const [selectedStatus, setSelectedStatus] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;

@@ -8,6 +8,8 @@ import Employees from "./pages/Employees";
 import AddEmployee from "./pages/AddEmployee";
 import EmployeeProfile from "./pages/EmployeeProfile";
 import EditEmployee from "./pages/EditEmployee";
+import Departments from "./pages/Departments";
+import Settings from "./pages/Settings";
 
 // Redirect authenticated users away from login
 const PublicRoute = ({ children }) => {
@@ -36,12 +38,12 @@ const App = () => {
             <Route path="/employees/:id/edit" element={<EditEmployee />} />
             <Route path="/employees/:id" element={<EmployeeProfile />} />
             <Route path="/employees" element={<Employees />} />
-            <Route path="/departments" element={<div>Departments Placeholder</div>} />
-            <Route path="/reports" element={<div>Reports Placeholder</div>} />
-            <Route path="/settings" element={<div>Settings Placeholder</div>} />
+            <Route path="/departments" element={<Departments />} />
+            {/* <Route path="/reports" element={<div>Reports Placeholder</div>} /> */}
+            <Route path="/settings" element={<Settings />} />
           </Route>
 
-          <Route path="*" element={<Navigate to="/dashboard" />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
